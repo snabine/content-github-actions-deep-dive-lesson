@@ -95,7 +95,6 @@ jobs:
       - name: Create test function
         run: |
             aws lambda create-function --function-name test-function-${{ matrix.input }} \
-
             --code S3Bucket=my-bucket-dfdgetdfgf32rt354wew,S3Key=${{ github.sha }}.zip \
             --handler lambda_function.lambda_handler --runtime python3.8 \
             --role arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/my_lambda_function
